@@ -1,0 +1,13 @@
+<div *ngFor="let lista of listas" class="playlist">
+  <button (click)="toggle(lista)" class="playlist-title">
+    {{ lista.nombre }}
+  </button>
+  <div *ngIf="lista.abierta" class="playlist-details">
+    <p><strong>Descripción:</strong> {{ lista.descripcion }}</p>
+    <ul>
+      <li *ngFor="let cancion of lista.canciones">
+        🎵 {{ cancion.titulo }} - {{ cancion.artista }} ({{ cancion.album }}, {{ cancion.anno }})
+      </li>
+    </ul>
+  </div>
+</div>
